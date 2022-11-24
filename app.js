@@ -9,6 +9,7 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var authRouter = require('./routes/auth');
 var app = express();
+require('dotenv').config();
  
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -37,8 +38,9 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
-app.listen(3001, () => {
-    console.log("Server is Running at port 3001");
+const PORT = process.env.PORT ;
+app.listen(PORT, () => {
+ console.log( `Server started on port ${PORT}`)
   });
   
  
