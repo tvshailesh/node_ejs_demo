@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,
+        initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container mt-3">
+      <br />
+      <h1>Register Form</h1>
+      <br />
+      <form action="/formFillUp" method="post">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputFName" style="font-size: 23px"> First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="fname"
+              name="first_name"
+            />
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="inputLname" style="font-size: 23px"> Last Name </label>
+            <input
+              type="text"
+              class="form-control"
+              id="lname"
+              name="last_name"
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputAge" style="font-size: 23px"> Age</label>
+            <input type="number" class="form-control" id="age" name="age" />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputCity" style="font-size: 23px">City </label>
+            <input type="text" class="form-control" id="City" name="city" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputphone" style="font-size: 23px">Phone_no</label>
+            <input
+              type="text"
+              class="form-control"
+              id="phone"
+              name="phone_no"
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputEmail" style="font-size: 23px"> Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="inputEmail"
+              name="email"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress" style="font-size: 23px">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
