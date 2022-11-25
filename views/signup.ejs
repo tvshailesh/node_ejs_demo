@@ -10,17 +10,136 @@
     />
 
     <!-- Bootstrap CSS -->
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./style.css" />
+    /> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/
+    jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/
+    popper.js/1.12.9/umd/popper.min.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+
+    <script>
+      function validate() {
+        console.log("button press");
+        var fname = document.Register.first_name;
+        var lname = document.Register.last_name;
+        var age = document.Register.age;
+        var city = document.Register.city;
+        var phone_no = document.Register.phone_no;
+        var email = document.Register.email;
+        var password = document.Register.password;
+
+        $("#first_name_check").hide();
+        let usernameError = true;
+        $("#fname").keyup(function () {
+          validateUsername();
+        });
+
+        function validateUsername() {
+          let fnameValue = $("#fname").val();
+          let lnameValue = $("#lname").val();
+          console.log("//////", fnameValue, lnameValue);
+          if (fnameValue.length == "" && lnameValue.length == "") {
+            $("#first_name_check").show();
+            $("#last_name_check").show();
+            usernameError = false;
+            return false;
+          } else {
+            $("#first_name_check").hide();
+            $("#last_name_check").hide();
+          }
+        }
+        // $("#last_name_check").hide();
+        // $("#lname").keyup(function () {
+        //   vallastName();
+        // });
+        // function vallastName() {
+        //   let lnameValue = $("#lname").val();
+        //   if ( lnameValue.length == "") {
+        //     $("#last_name_check").show();
+        //     return false;
+        //   } else {
+        //     $("#last_name_check").hide();
+        //   }
+        // }
+        // if (fname.value.length <= 0) {
+        //   // alert("First Name is required");
+        //   // $("#first_name_check").value();
+        //   $("#first_name_check").show();
+        //   fname.focus();
+        //   return false;
+        // } else {
+        //   $("#first_name_check").hide();
+        //   fname.focus()
+        //   return false;
+        // }
+        if (lname.value.length <= 0) {
+          $("#last_name_check").show();
+          lname.focus();
+          return false;
+        } else {
+          $("#last_name_check").hide();
+        }
+        if (age.value.length <= "select course") {
+          alert("Age is required");
+          address.focus();
+          return false;
+        }
+        if (city.value.length <= 0) {
+          alert("City is required");
+          gender.focus();
+          return false;
+        }
+        if (phone_no.value.length <= 0) {
+          alert("Phone Number Id is required");
+          $("#phone_no_check").show();
+          email.focus();
+          return false;
+        }
+        if (mobile.value.length <= 0) {
+          alert("Mobile number is required");
+          mobile.focus();
+          return false;
+        }
+        if (email.value == "") {
+          alert("email is required");
+          email.focus();
+          return false;
+        }
+        if (password.value == "select course") {
+          alert("Password is required");
+          password.focus();
+          return false;
+        }
+        returnfalse;
+      }
+    </script>
+    <script src="/js/validate.js"></script>
   </head>
 
   <body>
@@ -28,7 +147,22 @@
       <br />
       <h1>Register Form</h1>
       <br />
-      <form action="/formFillUp" method="post">
+      <!-- <% if(typeof alert != 'undefined') { %> <% alert.forEach(function(error) {
+      %> -->
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <!-- <%= error.msg %> -->
+        <button
+          type="button"
+          class="close"
+          data-dismiss="alert"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <!-- <% }) %> <% } %> -->
+      <br />
+      <form action="/formFillUp" method="post" name="Register">
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputFName" style="font-size: 23px"> First Name</label>
@@ -38,6 +172,15 @@
               id="fname"
               name="first_name"
             />
+            <!-- <h5 id="first_name_check" style="color: red">first_name is missing</h5> -->
+            <small
+              id="first_name_check"
+              name="first_name_check"
+              class="form-text text-muted invalid-feedback"
+              value="first_name is missing"
+            >
+              first_name is missing
+            </small>
           </div>
 
           <div class="form-group col-md-6">
@@ -48,17 +191,37 @@
               id="lname"
               name="last_name"
             />
+            <!-- <h5 id="last_name_check" style="color: red">last_name is missing</h5> -->
+            <small
+              id="last_name_check"
+              name="last_name_check"
+              class="form-text text-muted invalid-feedback"
+            >
+              last_name is missing
+            </small>
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputAge" style="font-size: 23px"> Age</label>
-            <input type="number" class="form-control" id="age" name="age" />
+            <select name="age">
+              <option value="select age">select age</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+            </select>
           </div>
           <div class="form-group col-md-6">
             <label for="inputCity" style="font-size: 23px">City </label>
             <input type="text" class="form-control" id="City" name="city" />
+            <small
+              id="City_check"
+              class="form-text text-muted invalid-feedback"
+            >
+              Please Add City
+            </small>
           </div>
         </div>
 
@@ -68,18 +231,26 @@
             <input
               type="text"
               class="form-control"
-              id="phone"
+              id="phone_no"
               name="phone_no"
             />
+            <small
+              id="phone_no_check"
+              class="form-text text-muted invalid-feedback"
+            >
+              Please enter validate Number
+            </small>
           </div>
           <div class="form-group col-md-6">
             <label for="inputEmail" style="font-size: 23px"> Email</label>
-            <input
-              type="email"
-              class="form-control"
-              id="inputEmail"
+            <input type="email" class="form-control" id="email" name="email" />
+            <small
+              id="email"
               name="email"
-            />
+              class="form-text text-muted invalid-feedback"
+            >
+              Your email must be a valid email
+            </small>
           </div>
         </div>
         <div class="form-group">
@@ -90,8 +261,23 @@
             id="password"
             name="password"
           />
+          <small
+            id="password_check"
+            name="password_check"
+            class="form-text text-muted invalid-feedback"
+          >
+            **Please Fill the password
+          </small>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button
+          type="submit"
+          id="submitbtn"
+          value="Submit"
+          class="btn btn-primary"
+          onclick="validate()"
+        >
+          Submit
+        </button>
       </form>
     </div>
   </body>
