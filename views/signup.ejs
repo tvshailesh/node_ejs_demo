@@ -9,137 +9,103 @@
         initial-scale=1, shrink-to-fit=no"
     />
 
-    <!-- Bootstrap CSS -->
-    <!-- <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    /> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/
-    jquery/3.3.1/jquery.min.js"></script>
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/
-    popper.js/1.12.9/umd/popper.min.js"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
-      rel="stylesheet"
-    />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script>
       function validate() {
-        console.log("button press");
-        var fname = document.Register.first_name;
-        var lname = document.Register.last_name;
-        var age = document.Register.age;
-        var city = document.Register.city;
-        var phone_no = document.Register.phone_no;
-        var email = document.Register.email;
-        var password = document.Register.password;
-
-        $("#first_name_check").hide();
-        let usernameError = true;
-        $("#fname").keyup(function () {
-          validateUsername();
-        });
-
-        function validateUsername() {
-          let fnameValue = $("#fname").val();
-          let lnameValue = $("#lname").val();
-          console.log("//////", fnameValue, lnameValue);
-          if (fnameValue.length == "" && lnameValue.length == "") {
-            $("#first_name_check").show();
-            $("#last_name_check").show();
-            usernameError = false;
-            return false;
-          } else {
-            $("#first_name_check").hide();
-            $("#last_name_check").hide();
-          }
+        var fname = $("#fname").val();
+        var lname = $("#lname").val();
+        // var age =$("#age").val();
+        // var city = $("#city").val();
+        // var phone_no = $("#phone_no").val();
+        // var email =$("#email").val();
+        // var password = $("#password").val();
+        // console.log("condtin",fname.length == "");
+        if (fname.length == "") {
+          $("#first_name_check").show();
+          // fname.focus();
+          // return false;
+        } else {
+          $("#first_name_check").hide();
         }
-        // $("#last_name_check").hide();
-        // $("#lname").keyup(function () {
-        //   vallastName();
-        // });
-        // function vallastName() {
-        //   let lnameValue = $("#lname").val();
-        //   if ( lnameValue.length == "") {
-        //     $("#last_name_check").show();
-        //     return false;
-        //   } else {
-        //     $("#last_name_check").hide();
-        //   }
-        // }
-        // if (fname.value.length <= 0) {
-        //   // alert("First Name is required");
-        //   // $("#first_name_check").value();
-        //   $("#first_name_check").show();
-        //   fname.focus();
-        //   return false;
-        // } else {
-        //   $("#first_name_check").hide();
-        //   fname.focus()
-        //   return false;
-        // }
-        if (lname.value.length <= 0) {
+        if (lname.length == "") {
           $("#last_name_check").show();
-          lname.focus();
-          return false;
+          // lname.focus();
+          // return false;
         } else {
           $("#last_name_check").hide();
         }
-        if (age.value.length <= "select course") {
-          alert("Age is required");
-          address.focus();
-          return false;
-        }
-        if (city.value.length <= 0) {
-          alert("City is required");
-          gender.focus();
-          return false;
-        }
-        if (phone_no.value.length <= 0) {
-          alert("Phone Number Id is required");
-          $("#phone_no_check").show();
-          email.focus();
-          return false;
-        }
-        if (mobile.value.length <= 0) {
-          alert("Mobile number is required");
-          mobile.focus();
-          return false;
-        }
-        if (email.value == "") {
-          alert("email is required");
-          email.focus();
-          return false;
-        }
-        if (password.value == "select course") {
-          alert("Password is required");
-          password.focus();
-          return false;
-        }
-        returnfalse;
+        // if (age.value.le) {
+        //   alert("Age is required");
+        //   address.focus();
+        //   return false;
+        // }
+        // if (age == "select age") {
+        //   $("#Age_check").show();
+        //   // age.focus();
+        //   // return false;
+        // } else {
+        //   $("#Age_check").hide();
+        // }
+        // //city
+        // if (city.length == "") {
+        //   $("#City_check").show();
+        //   // city.focus();
+        //   // return false;
+        // } else {
+        //   $("#City_check").hide();
+        // }
+        // if (phone_no.length <= 0) {
+        //   $("#phone_no_check").show();
+        //   // phone_no.focus();
+        //   // return false;
+        // } else {
+        //   $("#phone_no_check").hide();
+        // }
+        // let regex = /^([_\-\.0-9a-zA-Z]+)@([_\-\.0-9a-zA-Z]+)\.([a-zA-Z]){2,7}$/;
+        // let s = email.value;
+        // if (email == "") {
+        //   $("#email_check").show();
+        //   // email.focus();
+        //   // return false;
+        // }else if(regex.test(s))
+        // {
+        //   $("#email_check").show();
+
+        // }else{
+        //   $("#email_check").hide();
+        // }
+        // // const email = document.getElementById("email");
+        // // email.addEventListener("blur", () => {
+        // //   let regex =
+        // //     /^([_\-\.0-9a-zA-Z]+)@([_\-\.0-9a-zA-Z]+)\.([a-zA-Z]){2,7}$/;
+        // //   let s = email.value;
+        // //   if (regex.test(s)) {
+        // //     email.classList.remove("is-invalid");
+        // //     $("#email_check").show();
+        // //   } else  {
+        // //     email.classList.add("is-invalid");
+        // //     $("#email_check").show();
+        // //   }
+        // // });
+
+        // if (password.length == "") {
+        //   $("#password_check").show();
+        // } else if (password.length < 5 || password.length > 10) {
+        //   $("#password_check").show();
+        // } else {
+        //   $("#password_check").hide();
+        // }
+
+        return false;
       }
     </script>
-    <script src="/js/validate.js"></script>
+    <!-- <script type="text/javascript" src="/js/validate.js"></script> -->
   </head>
 
   <body>
@@ -205,17 +171,29 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputAge" style="font-size: 23px"> Age</label>
-            <select name="age">
+            <select
+              name="age"
+              id="age"
+              class="form-group form-control col-md-12"
+            >
               <option value="select age">select age</option>
               <option value="18">18</option>
               <option value="19">19</option>
               <option value="20">20</option>
               <option value="21">21</option>
             </select>
+            <small
+              id="Age_check"
+              name="Age_check"
+              class="form-text text-muted invalid-feedback"
+            >
+              Please Select Age
+            </small>
           </div>
+
           <div class="form-group col-md-6">
             <label for="inputCity" style="font-size: 23px">City </label>
-            <input type="text" class="form-control" id="City" name="city" />
+            <input type="text" class="form-control" id="city" name="city" />
             <small
               id="City_check"
               class="form-text text-muted invalid-feedback"
@@ -245,7 +223,7 @@
             <label for="inputEmail" style="font-size: 23px"> Email</label>
             <input type="email" class="form-control" id="email" name="email" />
             <small
-              id="email"
+              id="email_check"
               name="email"
               class="form-text text-muted invalid-feedback"
             >

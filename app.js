@@ -8,6 +8,7 @@ var flash = require('express-flash');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var authRouter = require('./routes/auth');
+var routes = require("./routes/index");
 var app = express();
 require('dotenv').config();
  
@@ -21,22 +22,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
  
-app.use(session({ 
-    secret: '123456cat',
-    resave: false,
-    saveUninitialized: true,
-    cookie: { maxAge: 60000 }
-}))
+// app.use(flash());
+// app.use(expressValidator());
  
-app.use(flash());
-app.use(expressValidator());
- 
-app.use('/', authRouter);
+// app.get('/', routes.index);
+// app.get('/login', routes.login);
+// app.get('/register', routes.register);
+app.get("/",authRouter)
  
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
+// app.use(function(req, res, next) {
+//   next(createError(404));
+// });
 
 const PORT = process.env.PORT ;
 app.listen(PORT, () => {
